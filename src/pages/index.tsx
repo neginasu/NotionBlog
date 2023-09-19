@@ -34,17 +34,18 @@ export default function Home({ allPosts }) {
           <h1 className="text-5xl font-medium text-center mb-16">
             neginasu Blog🍆
           </h1>
-          {allPosts.map((post) => (
-            <div className="mx-4">
+          <div className="mx-4">
+            {allPosts.map((post, index) => (
               <SinglePost
+                key={`${post.date}${index}`}
                 title={post.title}
                 description={post.description}
                 date={post.date}
                 tags={post.tags}
                 slug={post.slug}
               />
-            </div>
-          ))}
+            ))}
+          </div>
         </main>
       </div>
     </>
