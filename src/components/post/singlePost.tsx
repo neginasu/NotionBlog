@@ -18,7 +18,10 @@ export const SinglePost = (props: Props) => {
             <h2 className="text-gray-500">{title}</h2>
             <div className="text-gray-500">{date}</div>
             {tags.map((tag: string) => (
-              <span className="text-white bg-violet-400 rounded-xl px-2 font-medium">
+              <span
+                className="text-white bg-violet-400 rounded-xl px-2 font-medium"
+                key={tag}
+              >
                 {tag}
               </span>
             ))}
