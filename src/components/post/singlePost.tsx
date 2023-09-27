@@ -15,7 +15,12 @@ export const SinglePost = (props: Props) => {
       <section className="lg:w-1/2 bg-violet-300 mb-8 mx-auto rounded-md p-5 shadow-2xl hover:shadow-none hover:translate-y-1 transition-all duration-300">
         <div className="flex items-center gap-3">
           <h2 className="text-gray-500">
-            <Link href={`/posts/${slug}`}>{title} </Link>
+            <Link
+              href={`/posts/${slug}`}
+              className="no-underline hover:underline hover:text-violet-500 transition-all duration-300"
+            >
+              {title}{" "}
+            </Link>
           </h2>
           <div className="text-gray-500">{date}</div>
           {tags.map((tag: string) => (
