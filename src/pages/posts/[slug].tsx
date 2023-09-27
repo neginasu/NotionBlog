@@ -1,3 +1,16 @@
+import { getSinglePost } from "../../../lib/notionAPI";
+
+export const getStaticProps = async ({ params }) => {
+  const post = await getSinglePost(params.slug);
+
+  return {
+    props: {
+      post,
+    },
+    revalidate: 60,
+  };
+};
+
 const Post = () => {
   return (
     <>
