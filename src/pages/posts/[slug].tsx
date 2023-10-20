@@ -1,5 +1,16 @@
 import { getSinglePost } from "../../../lib/notionAPI";
 
+export const getStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { slug: "first-post" } },
+      { params: { slug: "second-post" } },
+      { params: { slug: "third-post" } },
+    ],
+    fallback: "blocking",
+  };
+};
+
 export const getStaticProps = async ({ params }) => {
   const post = await getSinglePost(params.slug);
 
