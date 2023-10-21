@@ -31,7 +31,7 @@ const Post = ({ post }) => {
         </span>
         <br />
         {post.metadata.tags.map((tag: string) => (
-          <p className="text-white bg-violet-400 rounded-xl font-medium mt-2 px-2 inline-block">
+          <p className="text-white bg-violet-400 rounded-xl font-medium mt-2 px-2 inline-block mr-2">
             {tag}
           </p>
         ))}
