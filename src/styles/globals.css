@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #e6e6fa;
+}
+
 img {
   width: 100%;
   height: 300%;
