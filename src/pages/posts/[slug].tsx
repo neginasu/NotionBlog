@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getAllPosts, getSinglePost } from "../../../lib/notionAPI";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -62,6 +63,12 @@ const Post = ({ post }) => {
               },
             }}
           />
+
+          <Link href="/">
+            <span className="pb-20 mt-3 no-underline hover:underline hover:text-violet-500 transition-all duration-300">
+              ← ホームに戻る
+            </span>
+          </Link>
         </div>
       </section>
     </>
