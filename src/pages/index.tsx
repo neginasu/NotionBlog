@@ -4,21 +4,23 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { getAllPosts } from "../../lib/notionAPI";
 import { SinglePost } from "@/components/post/singlePost";
+import { getPostsForTopPage } from "../../lib/notionAPI";
+import { GetStaticProps } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const getStaticProps = async () => {
-  const allPosts = await getAllPosts();
+export const getStaticProps: GetStaticProps = async () => {
+  const fivePosts = await getPostsForTopPage();
 
   return {
     props: {
-      allPosts,
+      fivePosts,
     },
     revalidate: 60,
   };
 };
 
-export default function Home({ allPosts }) {
+export default function Home({ fivePosts }) {
   // console.log(allPosts);
   return (
     <>
@@ -35,7 +37,7 @@ export default function Home({ allPosts }) {
             neginasu Blog🍆
           </h1>
           <div className="mx-4">
-            {allPosts.map((post, index) => (
+            {fivePosts.map((post, index) => (
               <SinglePost
                 key={`${post.date}${index}`}
                 title={post.title}

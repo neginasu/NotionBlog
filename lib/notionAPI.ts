@@ -62,3 +62,9 @@ export const getSinglePost = async (slug) => {
     markdown: mdString,
   };
 };
+
+export const getPostsForTopPage = async () => {
+  const allPosts = await getAllPosts();
+  const fourPosts = allPosts.slice(0, 5);
+  return fourPosts;
+};
